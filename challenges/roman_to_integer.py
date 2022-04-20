@@ -20,6 +20,6 @@ class Solution(object):
     def romanToInt(self, s):
         value = 0
         for character in s:
-            value = value + roman_cnversions(characer)
+            value = value + self.roman_cnversions(character)
             
         return value
