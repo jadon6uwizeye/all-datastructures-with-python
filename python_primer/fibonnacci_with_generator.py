@@ -3,8 +3,7 @@ def fibonacci(n):
     b = 1
     for counter in range(n):
         yield a 
-        future = a + b
-        a = b
-        b = future 
+        a, b = b, a+b
+        
 for f in fibonacci(10):
     print(f)
