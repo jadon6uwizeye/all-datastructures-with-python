@@ -1,5 +1,5 @@
 class Solution(object):
-    def roman_cnversions(c):
+    def roman_conversions(self,c):
         if c == "I":
             return 1
         elif c== "V" :
@@ -8,18 +8,30 @@ class Solution(object):
             return 10
         elif c == "L":
             return 50
-        elif c == "c":
+        elif c == "C":
             return 100
         elif c == "D":
             return 500
         elif c == "M":
-            return 10000
+            return 1000
         else:
-            raise Exception("unknown ROman literal")
+            raise Exception("unknown Roman literal")
             
     def romanToInt(self, s):
         value = 0
-        for character in s:
-            value = value + self.roman_cnversions(character)
+        s_iterator = iter(range(len(s)))
+        for counter in s_iterator:
+            try:
+                if(self.roman_conversions(s[counter]) < self.roman_conversions(s[counter+1])):
+                    value = value + (self.roman_conversions(s[counter+1])-self.roman_conversions(s[counter]))
+                    next(s_iterator, None)
+
+                else:
+                    value = value + self.roman_conversions(s[counter])
+            except IndexError:
+                break
             
         return value
+        
+s = Solution()
+print(s.romanToInt("MCMXCIV"))
