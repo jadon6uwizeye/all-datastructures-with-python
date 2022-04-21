@@ -29,7 +29,7 @@ class Solution(object):
                 else:
                     value = value + self.roman_conversions(s[counter])
             except IndexError:
-                break
+                value = value + self.roman_conversions(s[counter])
             
         return value
         
