@@ -43,6 +43,7 @@ class Solution:
                 return (nums[index1]+nums[index2])/2
             except IndexError:
                 return 1
+                
 
 s = Solution()
 print(s.findMedianSortedArrays([0,1,2,3],[4,5]))
