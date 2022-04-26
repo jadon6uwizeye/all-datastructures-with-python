@@ -12,5 +12,5 @@ def div(a,b):
     definning with this syntax is the same as this from the previous example
     '''
     print (a/b)
-   
+    
 div(2,4)
