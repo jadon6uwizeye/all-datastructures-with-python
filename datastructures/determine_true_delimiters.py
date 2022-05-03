@@ -14,7 +14,7 @@ def match_delimiters(input):
                 return False
 
         else:
-            return Error("unknown symbol")
+            return Exception("unknown symbol")
 
     return not(len(s))
 
