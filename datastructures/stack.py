@@ -1,25 +1,25 @@
 class ArrrayStack():
 
     def __init__(self):
-        self.data = []
+        self._data = []
 
     def is_empty(self):
         return (len(self.data) == 0)
 
     def push(self, obj):
-        return self.data.append(obj)
+        return self._data.append(obj)
 
     def pop(self):
-        if self.is_empty():
+        if self._data.is_empty():
             return Exception('empty stack')
 
-        return self.data.pop()
+        return self._data.pop()
 
     def top(self):
-        if self.is_empty():
+        if self._data.is_empty():
             return Exception('empty stack')
 
-        return self.data[-1]
+        return self._data[-1]
 
     def len(self):
-        return len(self.data)
+        return len(self._data)
