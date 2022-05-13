@@ -50,7 +50,7 @@ class LinkedStack:
         if self.is_empty( ):
             raise Exception( "Stack is empty" )
         answer = self. head. element
-        # bypass the former top node
+        # bypass the former top nod=-0e
         self. head = self. head. next
         self._size -= 1
         return answer
