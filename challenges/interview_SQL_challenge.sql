@@ -5,4 +5,4 @@ SELECT avg(price) as `average_price` FROM Products;
 
 SELECT count(*) as `number of Products` FROM Products where price=18;
 
-SELECT * From orders WHERE `OrderDate` BETWEEN(1996-08-01,1996-09-06);
+SELECT * From orders WHERE `OrderDate` BETWEEN(1996-08-01,1996-09-06);p gyujfsda
