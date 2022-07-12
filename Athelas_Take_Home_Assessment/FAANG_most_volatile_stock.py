@@ -26,7 +26,7 @@ for quote in quotes:
         most_volatile_stock_symbol = quote
         most_volatile_stock[quote] = quotes[quote]
     
-with open('csv_file.csv', 'w') as f:
+with open('Athelas_Take_Home_Assessment/csv_file.csv', 'w') as f:
     writer = csv.writer(f)
     
     #the header for the CSV file
