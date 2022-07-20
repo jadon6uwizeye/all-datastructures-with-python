@@ -19,3 +19,9 @@ for num in ar:
 print(ar1)
 print(ar2)
 print(ar3)
+
+
+# Challenge:
+_list = User.objects.values_list('id',flat=True).order_by('-created_on')[:100]
+
+User.objects.filter(id__in=list(u_list)).delete()
