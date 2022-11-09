@@ -1,0 +1,29 @@
+/* layout the form css */
+#form {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #eee;
+    border-radius: 10px;
+}
+
+/* loyout the input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* layout the text of inputs */
+input[type=text] {
+    font-size: 16px;
+}
+
+/* add page background color */
+body {
+    background: rgb(7, 33, 75);
+}
