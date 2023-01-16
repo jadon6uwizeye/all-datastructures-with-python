@@ -35,6 +35,15 @@ def paginate(data, page_length):
         pointer += page_length
     return pages
 
+def get_names(data,characters=CHARACTERS):
+    names = defaultdict(list)
+    words = data.split()
+    for character in characters:
+        for word in words:
+            if character.lower() in word:
+                names[character].append(word)
+    return names
+
 # main
-pages = paginate(data, 100)
-print(pages)
+names = get_names(data)
+print(names)
