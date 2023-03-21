@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Picker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#imagePicker').change(function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function (event) {
+                    $('#originalImage').attr('src', event.target.result);
+                    // send the image to the external API
+                    var formData = new FormData();
+                    formData.append('image', file);
+                    $.ajax({
+                        url: 'http://127.0.0.1:3000/remove/',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (data) {
+                            $('#reformattedImage').attr('src', data.url);
+                        },
+                        error: function () {
+                            alert('Error occurred while reformatting image');
+                        }
+                    });
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="file" id="imagePicker">
+    <br>
+    <img id="originalImage" style="max-width: 50%;">
+    <img id="reformattedImage" style="max-width: 50%;">
+</body>
+</html>
